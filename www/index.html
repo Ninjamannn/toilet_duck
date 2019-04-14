@@ -12,14 +12,14 @@
     h1{color: #f5f1f3; padding: 2vh; font-size: 3rem;}  p{font-size: 1.5rem;}
 
     .siteFooterBar {
-	position: fixed;
-	bottom: 0;
-	padding-top: 10px;
-	width: 100%;
-	box-shadow: 0px 0px 25px rgb(207, 207, 207);
-	height: 78px;
-	color: #9B9B9B;
-	background: #F3F3F3;
+	    position: fixed;
+	    bottom: 0;
+	    padding-top: 10px;
+	    width: 100%;
+	    box-shadow: 0px 0px 25px rgb(207, 207, 207);
+	    height: 78px;
+	    color: #9B9B9B;
+	    background: #F3F3F3;
     }
 
     .content {
@@ -31,20 +31,28 @@
     	font: 25px Georgia, "Times New Roman", Times, serif;
     	font-size: 14px;
     }
+
+        .content2 {
+    	display: block;
+    	padding: 5px;
+    	margin-left: auto;
+    	margin-right: auto;
+    	text-align: center;
+    	font: 25px Georgia, "Times New Roman", Times, serif;
+    	font-size: 14px;
+    }
+
     .foot { display: inline-block; line-height: 70px; vertical-align: top }
 
     body {
         height: 100%;
-        background: url(./wc.png) no-repeat 50% 70% fixed;
-        background-size: contain;
-        background-color: #a9a3a3;
+        /*background: url(./wc.png) no-repeat 50% 70% fixed;*/
+        /*background-size: contain;*/
+        /*background-color: #a9a3a3;*/
     }
 </style>
 <body>
 
-<!--<h1>Office WC 0e651abd</h1>-->
-<div id="result" style="font-size: 300%; font-family: Monaco, monospace; margin: 20px">
-</div>
 
 <script>
 if(typeof(EventSource) !== 'undefined') {
@@ -65,6 +73,18 @@ if(typeof(EventSource) !== 'undefined') {
     document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
 }
 </script>
+
+
+<div class="wc">
+    <div class="content2">
+        <img src=./wc.png width="300px" height="300px" >
+    </div>
+</div>
+
+
+<!--<h1>Office WC 0e651abd</h1>-->
+<div id="result" style="font-size: 300%; font-family: Monaco, monospace; margin: 20px"></div>
+
 
 <div class="siteFooterBar">
     <div class="content">
