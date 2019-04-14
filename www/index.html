@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <title>Office WC</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+</head>
+<style>
+    * {margin: 0; padding: 0;}
+    html{font-family: Helvetica; height: 100%; display:inline-block; margin: 0px auto; text-align: center;}
+    h1{color: #f5f1f3; padding: 2vh; font-size: 3rem;}  p{font-size: 1.5rem;}
+    /*#footer{position: fixed; left: 0; bottom: 0; margin-left: 30%; overflow:hidden; width:100px;}*/
+    /*.footer_image{background-image: url(./duck.png);background-repeat: no-repeat;height: 50px; background-size: 60%;*/
+        /*background-position: bottom; display:inline-block;}*/
+    .siteFooterBar {
+	position: fixed;
+	bottom: 0;
+	padding-top: 10px;
+	width: 100%;
+	box-shadow: 0px 0px 25px rgb(207, 207, 207);
+	height: 78px;
+	color: #9B9B9B;
+	background: #F3F3F3;
+    }
+
+    .content {
+    	display: block;
+    	padding: 5px;
+    	margin-left: auto;
+    	margin-right: auto;
+    	text-align: center;
+    	font: 25px Georgia, "Times New Roman", Times, serif;
+    	font-size: 14px;
+    }
+    .foot { display: inline-block; line-height: 70px; vertical-align: top }
+
+    body {
+        height: 100%;
+        background: url(./wc.png) no-repeat 50% 70% fixed;
+        background-size: 35%;
+        background-color: #a9a3a3;
+    }
+</style>
+<body>
+
+<!--<h1>Office WC 0e651abd</h1>-->
+<div id="result" style="color: inherit; font-size: 300%; font-family: Monaco, monospace; margin: 20px">
+</div>
+
+<script>
+if(typeof(EventSource) !== 'undefined') {
+    const source = new EventSource('http://' + window.location.hostname + '/status');
+    source.onmessage = function(e) {
+
+        if (e.data === "WC is invaded!") {
+            document.getElementById("result").style.color = "#bd2c2c";
+            document.getElementById("result").innerHTML = e.data;
+        }
+        else if (e.data === "WC is vacant") {
+            document.getElementById("result").innerHTML = e.data;
+            document.getElementById("result").style.color = "#0e651a";
+        }
+
+    };
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support server-sent events...";
+}
+</script>
+
+<div class="siteFooterBar">
+    <div class="content">
+        <img src=./duck.png width="70px" height="70px" >
+        <div class="foot">2019 © Toilet duck project.</div>
+    </div>
+</div>
+</body>
+</html>
