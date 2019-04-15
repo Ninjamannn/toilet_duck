@@ -5,8 +5,8 @@ from machine import Pin, ADC
 
 adc = ADC(Pin(33))  # fotoresist pin on board - 32
 
-ssid = 'Addams_family'
-password = '2gvI6hV%~$vea'
+ssid = ''
+password = ''
 station = network.WLAN(network.STA_IF)
 station.active(True)
 station.connect(ssid, password)
